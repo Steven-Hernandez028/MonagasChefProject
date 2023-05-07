@@ -1,58 +1,56 @@
-import { useState } from "react";
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import Navbar from "./components/Navbar";
-import bg from "./assets/bg.png";
-import Aboutme from "./components/Aboutme";
+
+import Aboutme from "./components/about us/Aboutme";
 import spoonbg from "./assets/spoon.png";
 import "./App.css";
-import { CardSection } from "./components/CardSection";
+import { CardSection } from "./components/card section/CardSection";
+import { Home } from "./components/home/Home";
+import { Image,Box } from "@chakra-ui/react";
+import  bg  from  './assets/bg2.jpg';
+import './App.css'
 
-interface HomeSectionProps {
-  title: string;
-  subtitle: string;
-  buttonText: string;
-  buttonLink: string;
-}
-const HomeSection: React.FC<HomeSectionProps> = ({
-  title,
-  subtitle,
-  buttonText,
-  buttonLink,
-}) => {
+
+// title="Victor Monagas"
+//         subtitle="Este es el mejor lugar para encontrar información sobre mí y lo que hago."
+//         buttonText="Contacto"
+//         buttonLink="/contacto"
+
+
+
+function Background({ children } : any)  {
   return (
-    <>
-      <Box
-        bg="blue.500"
-        h="100vh"
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="start"
-        bgImage={bg}
-      >
-        <Navbar />
-        <Heading as="h3" size="xl" color="white" mb="4" ml="8" border={"2px solid #fff"}>
-          I'M
-        </Heading>
-        <Heading as="h1" size="4xl" color="white" mb="4" ml="8" border={"2px solid #f33"}>
-          {title}
-        </Heading>
-        <Text fontSize="lg" color="white" textAlign="center">
-          {subtitle}
-        </Text>
-        <Button
-          mt="8"
-          colorScheme="blue"
-          variant="outline"
-          size="lg"
-          as="a"
+    <Box
+      backgroundImage={`url(${bg})`}
+      backgroundSize="cover"
+      width = "100%"
+      height="100%"
+      filter="blur(.5px) grayscale(20%) brightness(.6)"
+      backgroundPosition="50"
+      backgroundRepeat="no-repeat"
+      boxShadow="inset 10px 10px 50px rgba(0, 0, 0, .5)"
 
-          href={buttonLink}
-        >
-          {buttonText}
-        </Button>
-      </Box>
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      zIndex="-1"
+    >
 
+    </Box>
+  );
+}
+
+
+
+const App= () => {
+  return (
+   
+
+<Box>
+
+
+  <Background/>
+  <Home/>
       <Aboutme
         title="Título de la sección"
         subtitle="Subtítulo de la sección"
@@ -72,10 +70,15 @@ const HomeSection: React.FC<HomeSectionProps> = ({
       />
     
     <CardSection/>
-    </>
+
+
+</Box>
+
+   
+
 
 
   );
 };
 
-export default HomeSection;
+export default App;
