@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
-
+//TODO hacer que el menu desplegado quede en posicion del top del menu
   return (
     <Box
       position="fixed"
@@ -78,12 +78,13 @@ const Navbar: React.FC = () => {
       color="white"
       py="4"
       px="8"
+      height="95px"
     >
       <Flex justify={isLargerThan768 ? "center" : "end"} alignItems={"center"}>
         {isLargerThan768 ? (
           <Box border="1px solid #fff" width="70%">
             <Flex>
-              <Box width="100px" height="70px" pos="relative" top="-10px">
+              <Box width="85px" height="70px" pos="relative" top="-10px">
                 <Center>
                   <Image src={Logo} position="relative" width="100%" />
                 </Center>
@@ -157,10 +158,11 @@ const Navbar: React.FC = () => {
           <Flex justify={"space-between"} width="100%">
             <Box
               transition={"all .3s ease"}
-              width={isScrolled ? "50px" : "60px"}
+              width={isScrolled ? "50px" : "90px"}
               height={isScrolled ? "30px" : "50px"}
               pos="relative"
-              top={isScrolled ? "-10px" : "-0px"}
+
+              top={isScrolled ? "-10px" : "-20px"}
             >
               <Center>
                 <Image
