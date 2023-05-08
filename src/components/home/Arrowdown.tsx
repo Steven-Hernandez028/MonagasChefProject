@@ -31,6 +31,8 @@ function ArrowDown() {
         y="5"
         dominantBaseline="middle"
         textAnchor="middle"
+        fontFamily=" Hind Siliguri, sans-serif"
+
         fontSize="10"
         fill="#fff"
         color={"white"}
@@ -38,8 +40,6 @@ function ArrowDown() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 6, ease: "easeOut" }}
         exit={{ opacity: 0, y: 20 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
       >
         Scroll down
       </motion.text>

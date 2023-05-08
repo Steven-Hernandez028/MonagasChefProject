@@ -8,36 +8,8 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import bg2 from '../../assets/logobg.png'
 
-// function Aboutme() {
-//   return (
-//     <Box py={20} bg="gray.100">
-//       <Container maxW="container.xl">
-//         <Grid templateColumns={["1fr", "1fr","1fr 2fr"]}  templateRows={["1fr","1fr"]} gap={20}>
-
-//           <Box order={[1,0,0]}>
-//             <Text as="h2" fontSize="4xl" fontWeight="bold" mb={4} textAlign={"center"}>
-//               Título de la sección
-//             </Text>
-//             <Text as="h3" fontSize="2xl" fontWeight="semibold" mb={6} textAlign={"center"}>
-//               Subtítulo de la sección
-//             </Text>
-//             <Text fontSize="lg" mb={8} textAlign={"center"}>
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-//               efficitur ligula sit amet ipsum semper consectetur. Donec id
-//               sapien eget lorem malesuada dictum. Sed eget magna sed nunc
-//               luctus tristique.
-//             </Text>
-//           </Box>
-//           <Image src={spoonbg} alt="Section Image" />
-
-//         </Grid>
-//       </Container>
-//     </Box>
-//   );
-// }
-
-// export default Aboutme;
 
 interface SectionProps {
   title: string;
@@ -45,6 +17,40 @@ interface SectionProps {
   paragraph: string;
   imageSrc: string;
 }
+
+
+
+
+
+
+
+function Background()  {
+  return (
+    <Box
+      backgroundImage={`url(${bg2})`}
+      position="absolute"
+      backgroundSize="cover"
+      width = "100%"
+      height="100%"
+      filter="blur(1px)  opacity(20%)"
+
+      backgroundRepeat="no-repeat"
+      boxShadow="inset 10px 10px 50px rgba(0, 0, 0, .5)"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      zIndex={"1"}
+  
+    >
+
+    </Box>
+  );
+}
+
+
+
+
 
 const Aboutme: React.FC<SectionProps> = ({
   title,
@@ -57,16 +63,15 @@ const Aboutme: React.FC<SectionProps> = ({
       direction={{ base: "column", md: "row" }}
       alignItems={{ base: "center", md: "flex-start" }}
       textAlign={{ base: "center", md: "left" }}
-      border="1px solid #000"
+      position="relative"
       backgroundColor="color.whitebase"
       padding={20}
+      // bgPosition={"center"}
+    
+      // bgImg={bg2}
     >
-      <Box flex="4" order={{ base: "2", md: "2" }}>
-        {/* <Heading as="h2" marginBottom="1rem">
-          {title}
-        </Heading>
-        <Text marginBottom="1rem">{subtitle}</Text>
-        <Text>{paragraph}</Text> */}
+      <Box flex="4" order={{ base: "2", md: "2" }} zIndex={5000}>
+
 
         <Text
           as="h2"
@@ -74,19 +79,21 @@ const Aboutme: React.FC<SectionProps> = ({
           fontWeight="bold"
           mb={4}
           textAlign={"center"}
+          fontFamily="title"
         >
           {title}
         </Text>
         <Text
           as="h3"
-          fontSize="2xl"
+          fontSize="xl"
           fontWeight="semibold"
           mb={6}
           textAlign={"center"}
+          fontFamily="subtitle"
         >
           {subtitle}
         </Text>
-        <Text fontSize="lg" mb={8} textAlign={"center"}>
+        <Text fontSize="lg" mb={8} textAlign={"center"} fontFamily="subtitle" zIndex="500">
           {paragraph}
         </Text>
       </Box>
@@ -95,7 +102,7 @@ const Aboutme: React.FC<SectionProps> = ({
         flex={{ base: "0", md: "1" }}
         order={{ base: "2", md: "1" }}
         margin={{ base: "2rem 0", md: "0 1rem 0 0" }}
-        border="1px solid #f33"
+   
       >
         <Image
           src={imageSrc}
@@ -104,6 +111,10 @@ const Aboutme: React.FC<SectionProps> = ({
           width={"200px"}
         />
       </Box>
+
+
+      <Background/>
+
     </Flex>
   );
 };
