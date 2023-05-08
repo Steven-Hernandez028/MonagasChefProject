@@ -76,13 +76,15 @@ const Navbar: React.FC = () => {
           top="0"
           left="0"
           right="0"
-          zIndex="1"
-          bg="rgba(0,0,0,.6)"
+          zIndex="100000"
+          bg={isScrolled? 'rgb(0,0,0)' :  'rgba(0,0,0,.5)' }
+          // bg=`rgba(0,0,0,)`
           color="white"
           py="4"
           px="8"
           transition={"all .3s ease"}
           height={"70px"}
+
         >
           <Flex
             justify={isLargerThan768 ? "center" : "end"}
@@ -183,12 +185,12 @@ const Navbar: React.FC = () => {
           left="0"
           right="0"
           zIndex="1"
-          bg="rgba(0,0,0,.6)"
+          bg={isScrolled? 'rgb(0,0,0)' :  'rgba(0,0,0,.5)' }
           color="white"
           py="4"
           px="8"
           transition={"all .3s ease"}
-          height={isScrolled ? "65px" : "95px"}
+          height={isScrolled ? "65px" : "75px"}
         >
           <Flex
             justify={isLargerThan768 ? "center" : "end"}
@@ -197,7 +199,7 @@ const Navbar: React.FC = () => {
             <Flex justify={"space-between"} width="100%">
               <Box
                 transition={"all .3s ease"}
-                width={isScrolled ? "55px" : "90px"}
+                width={isScrolled ? "55px" : "70px"}
                 height={isScrolled ? "40px" : "50px"}
                 pos="relative"
                 top={isScrolled ? "-10px" : "-15px"}
@@ -227,7 +229,7 @@ const Navbar: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     position="absolute"
-                    top={isScrolled ? "75px" : "95px"}
+                    top={isScrolled ? "65px" : "75px"}
                     transition={"all .3s ease"}
                     left="0"
                     right="0"

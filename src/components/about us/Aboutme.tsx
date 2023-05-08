@@ -1,6 +1,7 @@
 // // import spoonbg from "../assets/spoon.png";
 import {
   Box,
+  Button,
   Container,
   Flex,
   Grid,
@@ -9,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import bg2 from '../../assets/logobg.png'
+import { MdCall } from "react-icons/md";
 
 
 interface SectionProps {
@@ -57,66 +59,78 @@ const Aboutme: React.FC<SectionProps> = ({
   subtitle,
   paragraph,
   imageSrc,
-}) => {
-  return (
-    <Flex
-      direction={{ base: "column", md: "row" }}
-      alignItems={{ base: "center", md: "flex-start" }}
-      textAlign={{ base: "center", md: "left" }}
-      position="relative"
-      backgroundColor="color.whitebase"
-      padding={20}
-      // bgPosition={"center"}
-    
-      // bgImg={bg2}
-    >
-      <Box flex="4" order={{ base: "2", md: "2" }} zIndex={5000}>
+}) => (
+  <Flex
+    direction={{ base: "column", md: "row" }}
+    alignItems={{ base: "center", md: "flex-start" }}
+
+    textAlign={{ base: "center", md: "left" }}
+    position="relative"
+    backgroundColor="color.whitebase"
+    padding={20}
+  >
+    <Box flex="5" order={{ base: "2", md: "2" }} zIndex={5000}>
 
 
-        <Text
-          as="h2"
-          fontSize="4xl"
-          fontWeight="bold"
-          mb={4}
-          textAlign={"center"}
-          fontFamily="title"
-        >
-          {title}
-        </Text>
-        <Text
-          as="h3"
-          fontSize="xl"
-          fontWeight="semibold"
-          mb={6}
-          textAlign={"center"}
-          fontFamily="subtitle"
-        >
-          {subtitle}
-        </Text>
-        <Text fontSize="lg" mb={8} textAlign={"center"} fontFamily="subtitle" zIndex="500">
-          {paragraph}
-        </Text>
-      </Box>
-
-      <Box
-        flex={{ base: "0", md: "1" }}
-        order={{ base: "2", md: "1" }}
-        margin={{ base: "2rem 0", md: "0 1rem 0 0" }}
-   
+      <Text
+        as="h2"
+        fontSize="4xl"
+        fontWeight="bold"
+        mb={4}
+        textAlign={"center"}
+        fontFamily="title"
       >
-        <Image
-          src={imageSrc}
-          className="body__image"
-          alt="Section image"
-          width={"200px"}
-        />
-      </Box>
+        {title}
+      </Text>
+      <Text
+        as="h3"
+        fontSize="xl"
+        fontWeight="semibold"
+        mb={6}
+        textAlign={"center"}
+        fontFamily="subtitle"
+      >
+        {subtitle}
+      </Text>
+      <Text fontSize="lg" mb={8} textAlign={"center"} fontFamily="subtitle" zIndex="500">
+        {paragraph}
+      </Text>
+
+      <Flex width="100%" position="relative" justify={"center"}>
+        <Button
+    
+          bg="color.primary"
+          position="absolute"
+          size="lg"
+          fontFamily="subtitle"
+          mt="0"
+          _hover={{ bg: "#bb7848" }}
+          borderRadius={50}
+          color="white"
+        >
+          Read More
+        </Button>
+      </Flex>
+  
+    </Box>
+
+    <Box
+      flex={{ base: "0", md: "1" }}
+      order={{ base: "2", md: "1" }}
+      margin={{ base: "2rem 0", md: "0 1rem 0 0" }}
+
+    >
+      <Image
+        src={imageSrc}
+        className="body__image"
+        alt="Section image"
+        width={"200px"} />
+    </Box>
 
 
-      <Background/>
+    <Background />
 
-    </Flex>
-  );
-};
+  </Flex>
+);
 
 export default Aboutme;
