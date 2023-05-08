@@ -9,14 +9,9 @@ import  bg  from  './assets/bg2.jpg';
 import './App.css'
 
 
-// title="Victor Monagas"
-//         subtitle="Este es el mejor lugar para encontrar información sobre mí y lo que hago."
-//         buttonText="Contacto"
-//         buttonLink="/contacto"
 
 
-
-function Background({ children } : any)  {
+function Background()  {
   return (
     <Box
       backgroundImage={`url(${bg})`}
@@ -52,8 +47,8 @@ const App= () => {
   <Background/>
   <Home/>
       <Aboutme
-        title="Título de la sección"
-        subtitle="Subtítulo de la sección"
+        title="About Me"
+        subtitle="Crafting Unforgettable Culinary Experiences - Chef-at-Home Services"  
         paragraph="I strive to provide the highest quality chef-at-home services that
         meet the needs and exceed the expectations of my clients. I take
         pride in using fresh, high-quality ingredients and applying

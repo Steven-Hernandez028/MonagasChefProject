@@ -16,11 +16,19 @@ const theme = extendTheme({
       whitebase: "#F5F2EB",
     },
   },
+
+  fonts:{
+    title: "Anton, sans-serif",
+    subtitle: "Hind Siliguri, sans-serif"
+  }
 });
+
+
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
   <ChakraProvider theme={theme}>
+  
     <App/>
   </ChakraProvider>
   </BrowserRouter>
