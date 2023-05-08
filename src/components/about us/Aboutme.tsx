@@ -1,4 +1,3 @@
-// // import spoonbg from "../assets/spoon.png";
 import {
   Box,
   Button,
@@ -9,9 +8,8 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import bg2 from '../../assets/logobg.png'
+import bg2 from "../../assets/logobg.png";
 import { MdCall } from "react-icons/md";
-
 
 interface SectionProps {
   title: string;
@@ -20,22 +18,15 @@ interface SectionProps {
   imageSrc: string;
 }
 
-
-
-
-
-
-
-function Background()  {
+function Background() {
   return (
     <Box
       backgroundImage={`url(${bg2})`}
       position="absolute"
       backgroundSize="cover"
-      width = "100%"
+      width="100%"
       height="100%"
       filter="blur(1px)  opacity(20%)"
-
       backgroundRepeat="no-repeat"
       boxShadow="inset 10px 10px 50px rgba(0, 0, 0, .5)"
       top="0"
@@ -43,16 +34,9 @@ function Background()  {
       right="0"
       bottom="0"
       zIndex={"1"}
-  
-    >
-
-    </Box>
+    ></Box>
   );
 }
-
-
-
-
 
 const Aboutme: React.FC<SectionProps> = ({
   title,
@@ -63,15 +47,18 @@ const Aboutme: React.FC<SectionProps> = ({
   <Flex
     direction={{ base: "column", md: "row" }}
     alignItems={{ base: "center", md: "flex-start" }}
-
     textAlign={{ base: "center", md: "left" }}
     position="relative"
     backgroundColor="color.whitebase"
     padding={20}
   >
-    <Box flex="5" order={{ base: "2", md: "2" }} zIndex={5000}>
-
-
+    <Flex
+      flex="5"
+      order={{ base: "2", md: "2" }}
+      zIndex={5000}
+      flexDir={"column"}
+      alignItems={"center"}
+    >
       <Text
         as="h2"
         fontSize="4xl"
@@ -82,6 +69,7 @@ const Aboutme: React.FC<SectionProps> = ({
       >
         {title}
       </Text>
+      //TODO aplicar el separador color negro
       <Text
         as="h3"
         fontSize="xl"
@@ -92,13 +80,20 @@ const Aboutme: React.FC<SectionProps> = ({
       >
         {subtitle}
       </Text>
-      <Text fontSize="lg" mb={8} textAlign={"center"} fontFamily="subtitle" zIndex="500">
+      <Text
+        fontSize="lg"
+        mb={8}
+        textAlign={"center"}
+        fontFamily="subtitle"
+        zIndex="500"
+        width={"80%"}
+
+      >
         {paragraph}
       </Text>
 
       <Flex width="100%" position="relative" justify={"center"}>
         <Button
-    
           bg="color.primary"
           position="absolute"
           size="lg"
@@ -111,25 +106,22 @@ const Aboutme: React.FC<SectionProps> = ({
           Read More
         </Button>
       </Flex>
-  
-    </Box>
+    </Flex>
 
     <Box
       flex={{ base: "0", md: "1" }}
       order={{ base: "2", md: "1" }}
       margin={{ base: "2rem 0", md: "0 1rem 0 0" }}
-
     >
       <Image
         src={imageSrc}
         className="body__image"
         alt="Section image"
-        width={"200px"} />
+        width={"200px"}
+      />
     </Box>
 
-
     <Background />
-
   </Flex>
 );
 

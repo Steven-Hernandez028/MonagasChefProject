@@ -1,7 +1,6 @@
 import { Box, Container } from '@chakra-ui/react'
-import React from 'react'
 import CardWrapper from './CardWrapper'
-import cardsbg from '../../assets/cardsbg.png'
+import cardsbg from '../../assets/cardbg2.jpg'
 
 
 const cardsData = [
@@ -24,13 +23,41 @@ const cardsData = [
       imageSrc: "https://via.placeholder.com/500x300",
     },
   ];
+
+  
+
+function Background()  {
+  return (
+    <Box
+      backgroundImage={`url(${cardsbg})`}
+      backgroundSize="cover"
+      width = "100%"
+      height="100%"
+      filter="blur(.5px) grayscale(20%) brightness(.6)"
+   
+      backgroundRepeat="no-repeat"
+      boxShadow="inset 10px 10px 50px rgba(0, 0, 0, .5)"
+
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      zIndex="-1"
+    >
+
+    </Box>
+  );
+}
+
 export const CardSection = () => {
   return (
-    <Box textAlign="center" fontSize="xl" mb="100px" padding={20}   bgImage={cardsbg} backgroundSize="cover" bgRepeat="no-repeat" bgSize="100%" border="1px solid #f33">
+    <Box textAlign="center" fontSize="xl" mb="100px" padding={20} position="relative">
+      <Background/>
     <Container maxW="container.xl" >
       <CardWrapper
-        title="Tarjetas de información"
-        subtitle="Estas son algunas tarjetas de información"
+        title="My Skills"
+        subtitle="Culinary prowess on display: My Skills in the Kitchen   "
         cardsData={cardsData}
       />
     </Container>

@@ -1,4 +1,5 @@
-import { Box, Flex, Heading, Divider } from "@chakra-ui/react";
+import { Box, Flex, Heading, Divider,Image } from "@chakra-ui/react";
+import separator from '../../assets/separatorbgwhite.svg'
 import Card from "./Card";
 
 interface CardSectionProps {
@@ -17,21 +18,29 @@ const CardWrapper: React.FC<CardSectionProps> = ({
   cardsData,
 }) => {
   return (
-    <Box
-
-
+    <Flex
+      flexDirection="column"
+      justify={"center"}
+      align={"center"}
     >
-      <Heading as="h2" size="lg" textAlign="center" marginBottom="2rem">
+      <Heading as="h2" fontSize="4xl" textAlign="center" marginBottom="2rem" fontFamily="title" color="white">
         {title}
       </Heading>
-
-      <Divider />
+    
+      <Image
+      src={separator}
+      width={50}
+      />
+    
       <Heading
         as="h3"
         size="md"
         marginTop="2rem"
         marginBottom="1rem"
         textAlign="center"
+
+        color="white"
+        fontFamily="subtitle"
       >
         {subtitle}
       </Heading>
@@ -41,7 +50,7 @@ const CardWrapper: React.FC<CardSectionProps> = ({
           <Card key={index} {...cardData} />
         ))}
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 

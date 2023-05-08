@@ -15,6 +15,10 @@ import ArrowDown from "./Arrowdown";
 const HeadingMotion = motion(Heading);
 
 
+
+
+
+
 export const Home = () => {
   const [showTitles, setShowTitles] = useState(false);
 
@@ -22,24 +26,6 @@ export const Home = () => {
   const {  scrollY } = useScroll();
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
-
-  // useMotionValueEvent(scrollY, "change", (latest)=>{
-  //   console.log("page scroll", latest)
-  // })
-
-
-
-
-  
-  // useEffect(() => {
-  //   const handleScroll = () => {
- 
-  //     // Si el usuario ha bajado más de 100 píxeles, mostrar los títulos
-  //     setShowTitles(scrollY > 100);
-
-  //   };
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [scrollY]);
 
 
 
@@ -109,8 +95,7 @@ export const Home = () => {
               A Chef with over 20 years of{" "}
               <Text color="color.font">experience</Text>
             </HeadingMotion>
-
-
+      
             </>
           )}
         </AnimatePresence>

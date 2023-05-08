@@ -34,7 +34,9 @@ function Background()  {
     </Box>
   );
 }
-
+//TODO hacer un componente separador color negro y blanco
+//TODO: aplicar estos componentes a los subtitulos y los titulos
+//TODO: trabajar el apartod de tarjetas 
 
 
 const App= () => {
