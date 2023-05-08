@@ -159,7 +159,7 @@ const Navbar: React.FC = () => {
             <Box
               transition={"all .3s ease"}
               width={isScrolled ? "50px" : "90px"}
-              height={isScrolled ? "30px" : "50px"}
+              height={isScrolled ? "30px" : "40px"}
               pos="relative"
 
               top={isScrolled ? "-10px" : "-20px"}
