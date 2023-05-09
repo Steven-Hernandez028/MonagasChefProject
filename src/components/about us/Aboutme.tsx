@@ -10,6 +10,9 @@ import {
 } from "@chakra-ui/react";
 import bg2 from "../../assets/logobg.png";
 import { MdCall } from "react-icons/md";
+import { Separator } from "../miscelanous/Separator";
+
+
 
 interface SectionProps {
   title: string;
@@ -63,13 +66,14 @@ const Aboutme: React.FC<SectionProps> = ({
         as="h2"
         fontSize="4xl"
         fontWeight="bold"
-        mb={4}
+        mb={4}  
         textAlign={"center"}
         fontFamily="title"
       >
         {title}
       </Text>
-      //TODO aplicar el separador color negro
+      <Separator/>
+
       <Text
         as="h3"
         fontSize="xl"
