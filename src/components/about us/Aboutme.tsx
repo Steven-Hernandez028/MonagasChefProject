@@ -72,7 +72,7 @@ const Aboutme: React.FC<SectionProps> = ({
       >
         {title}
       </Text>
-      <Separator/>
+      <Separator type ="black"/>
 
       <Text
         as="h3"

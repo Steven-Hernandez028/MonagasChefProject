@@ -33,12 +33,12 @@ function Background()  {
       backgroundSize="cover"
       width = "100%"
       height="100%"
-      filter="blur(.5px) grayscale(20%) brightness(.6)"
+      filter="blur(.9px) grayscale(4%) brightness(.8 )"
    
       backgroundRepeat="no-repeat"
       boxShadow="inset 10px 10px 50px rgba(0, 0, 0, .5)"
 
-      position="absolute"
+      position="fixed"
       top="0"
       left="0"
       right="0"
@@ -64,4 +64,28 @@ export const CardSection = () => {
   </Box>
 
     )
-}
+} 
+
+//Aplicar una funcionalidad donde pueda cambiar de fixed a absolute el background cuando se quiera dicho cambio
+//la idea es cque cuando el moues este cerca de section el fondo cambio preo cuando se vuelva al home este por default fijado el background correspodiente
+
+// const [isScrolled, setIsScrolled] = useState(false);
+// const [scrollPosition, setScrollPosition] = useState(0);
+
+// const handleScroll = () => {
+//   const position = window.scrollY;
+//   setScrollPosition(position);
+// };
+
+// useEffect(() => {
+//   window.addEventListener("scroll", handleScroll, { passive: true });
+//   return () => {
+//     window.removeEventListener("scroll", handleScroll);
+//   };
+// }, []);
+
+// useEffect(() => {
+//   setIsScrolled(scrollPosition > 100);
+// }, [scrollPosition]);
+
+

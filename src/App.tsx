@@ -57,12 +57,7 @@ const App= () => {
         innovative techniques to create unique and delicious dishes that
         represent Dominican and international culinary culture. I am
         committed to delivering exceptional service, with attention to
-        detail and a focus on client satisfaction. At our core, i believe
-        that great food is about more than just nourishment; it's about
-        creating lasting memories and fostering meaningful connections.
-        That's why i am committed to providing not just great food, but also
-        exceptional service and a warm, welcoming atmosphere that makes my
-        clients feel at home."
+        detail and a focus on client satisfaction."
         imageSrc={spoonbg}
       />
     

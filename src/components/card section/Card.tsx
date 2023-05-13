@@ -1,4 +1,4 @@
-import {Box, Heading, Text, Image} from "@chakra-ui/react";
+import {Box, Heading, Text, Image, useMediaQuery} from "@chakra-ui/react";
 
 interface Cardprops {
     title: string;
@@ -8,9 +8,12 @@ interface Cardprops {
 
 const Card : React.FC<Cardprops>   = ({title, description, imageSrc}) =>{
 
+    const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+
     return(
         <Box
-        maxW= "sm"
+        maxW= {isLargerThan768? '300px' : '500px'}
+        width={!isLargerThan768? '250px' : '1200px    '} 
         borderWidth = "1px"
         borderRadius="lg"
         overflow ="hidden"

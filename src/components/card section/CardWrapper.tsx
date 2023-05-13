@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Divider,Image } from "@chakra-ui/react";
 import separator from '../../assets/separatorbgwhite.svg'
 import Card from "./Card";
+import { Separator } from "../miscelanous/Separator";
 
 interface CardSectionProps {
   title: string;
@@ -25,13 +26,10 @@ const CardWrapper: React.FC<CardSectionProps> = ({
     >
       <Heading as="h2" fontSize="4xl" textAlign="center" marginBottom="2rem" fontFamily="title" color="white">
         {title}
+    
       </Heading>
-    
-      <Image
-      src={separator}
-      width={50}
-      />
-    
+
+        <Separator type = "white"   />
       <Heading
         as="h3"
         size="md"

@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
           zIndex="50000"
           bg={isScrolled? 'rgb(0,0,0)' :  'rgba(0,0,0,.5)' }
           color="white"
-          py="4"
+          py="4 "
           px="8"
           transition={"all .3s ease"}
 
